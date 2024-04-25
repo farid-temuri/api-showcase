@@ -1,5 +1,6 @@
 <template>
-	<div class=" bg-#F2F0F0 h-100px px-100px py-26px box-border flex flex-items-center flex-justify-between">
+	<div class="w-full bg-#F2F0F0">
+	<div class=" box-border mx-auto px-100px w-1240px h-100px py-26px box-border flex flex-items-center flex-justify-between">
 		<div class="  font-600 font-size-24px text-#0E2E3B">
 			IP-PN.COM
 		</div>
@@ -16,6 +17,8 @@
 			<div class="font-600 text-#0E2E3B">Log in</div>
 		</div>
 	</div>
+</div>
+
 </template>
 <script lang='ts' setup>
 import { ref } from 'vue';
