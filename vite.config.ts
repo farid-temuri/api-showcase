@@ -9,9 +9,10 @@ import Unocss from 'unocss/vite'
 import {
   presetUno,
 } from 'unocss'
+import VueRouter from 'unplugin-vue-router/vite'
+
 
 const pathSrc = path.resolve(__dirname, 'src')
-
 
 export default defineConfig({
   resolve: {
@@ -27,6 +28,8 @@ export default defineConfig({
     },
   },
   plugins: [
+    VueRouter({
+    }),
     vue(),
     Components({
       extensions: ['vue', 'md'],

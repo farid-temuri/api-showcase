@@ -7,8 +7,8 @@
 
 <script lang='ts' setup>
 import { usetableListStore } from '~/store';
-import IpListInput from './IpListInput.vue';
-import IpListTable from './IpListTable.vue';
+import IpListInput from '../components/IpList/IpListInput.vue';
+import IpListTable from '../components/IpList/IpListTable.vue';
 
 
 const tableListStore = usetableListStore()

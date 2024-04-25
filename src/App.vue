@@ -3,8 +3,17 @@
     <div id="main-app">
       <TheHeader/>
       <div class="box-border mx-auto px-100px w-1240px">
-        <RouterView></RouterView>
+        <RouterView :key="$route.path"></RouterView>
       </div>
     </div>
   </el-config-provider>
 </template>
+<script lang='ts' setup>
+import { watchEffect } from 'vue';
+import { useRoute } from 'vue-router';
+
+const route = useRoute()
+watchEffect( () => {
+  console.log( route.fullPath);
+})
+</script>

@@ -30,7 +30,7 @@
 import { IpTableList, usetableListStore } from '~/store';
 import { ref } from 'vue';
 import FlagResolver from '~/components/Icons/FlagResolver.vue';
-import { useRouter } from 'vue-router';
+import { useRouter } from 'vue-router/auto';
 
 const baseFormatter = ( val?: string ) => {
 	return val || '---'
@@ -41,11 +41,6 @@ const selectedIps = ref( [] )
 const router = useRouter()
 const doubleclick = ( ip: { query: string } & IpTableList ) => {
 	const resolverIp = ip.data?.query || ip.query
-	router.push( {
-		name: 'IpPage',
-		params: { ip: resolverIp },
-
-	})
-	
+	router.push( { name: '/[ip]', params: { ip: resolverIp } })
 }
 </script>
