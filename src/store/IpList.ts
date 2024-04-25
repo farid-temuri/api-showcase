@@ -40,14 +40,18 @@ export const usetableListStore = defineStore( 'tableListMap', () => {
 				status: 'loading',
 			}
 		)
-		const res = await ipRepository.getByIp( query )
-		
-		const { error, success } = handleRes( res )
-		
-		if ( error ) {
+		try {
+			const res = await ipRepository.getByIp( query )
+			
+			const { error, success } = handleRes( res )
+			
+			if ( error ) {
+				setIdData(query,'fail')
+			} else {
+				setIdData(query,'success',success)
+			}
+		} catch (error) {
 			setIdData(query,'fail')
-		} else {
-			setIdData(query,'success',success)
 		}
 	}
 	

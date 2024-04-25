@@ -1,6 +1,6 @@
 import { createMemoryHistory, createRouter } from 'vue-router'
 
-import IpList from './pages/IpList.vue'
+import IpList from './pages/IpList/IpList.vue'
 
 const routes = [
 	{ path: '/', component: IpList },
