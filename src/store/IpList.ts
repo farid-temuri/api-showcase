@@ -5,7 +5,7 @@ import { IpSuccessResult, handleRes } from '~/api/repository/ip.entity'
 
 export type loadingStatuses = 'loading' | 'success' | 'fail'
 
-type IpTableList = {
+export type IpTableList = {
 	data?: IpSuccessResult,
 	status: loadingStatuses,
 }

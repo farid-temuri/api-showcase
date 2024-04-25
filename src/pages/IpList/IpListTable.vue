@@ -1,5 +1,5 @@
 <template>
-	<el-table class="rounded-10px" v-model="selectedIps" stripe :data="tableListStore.tableList" border>
+	<el-table class="rounded-10px" v-model="selectedIps" stripe :data="tableListStore.tableList" border @cell-dblclick="doubleclick">
 		<el-table-column type="selection" width="40" />
     <el-table-column prop="query" label="IP" width="200"> 
 			<template #default="slot">
@@ -9,7 +9,7 @@
 		</el-table-column>
 
     
-		<el-table-column sortable label="Country">
+		<el-table-column label="Country">
 			<template #default="slot">
 				{{ baseFormatter(slot.row.data?.country)}}
 			</template>
@@ -27,14 +27,25 @@
   </el-table>
 </template>
 <script lang='ts' setup>
-import { usetableListStore } from '~/store';
+import { IpTableList, usetableListStore } from '~/store';
 import { ref } from 'vue';
 import FlagResolver from '~/components/Icons/FlagResolver.vue';
+import { useRouter } from 'vue-router';
 
 const baseFormatter = ( val?: string ) => {
 	return val || '---'
 }
 
 const tableListStore = usetableListStore()
-const selectedIps = ref([])
+const selectedIps = ref( [] )
+const router = useRouter()
+const doubleclick = ( ip: { query: string } & IpTableList ) => {
+	const resolverIp = ip.data?.query || ip.query
+	router.push( {
+		name: 'IpPage',
+		params: { ip: resolverIp },
+
+	})
+	
+}
 </script>
