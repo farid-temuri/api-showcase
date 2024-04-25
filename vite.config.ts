@@ -7,14 +7,11 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 import Unocss from 'unocss/vite'
 import {
-  presetAttributify,
-  presetIcons,
   presetUno,
-  transformerDirectives,
-  transformerVariantGroup,
 } from 'unocss'
 
 const pathSrc = path.resolve(__dirname, 'src')
+
 
 export default defineConfig({
   resolve: {
@@ -45,6 +42,6 @@ export default defineConfig({
       presets: [
         presetUno(),
       ],
-    }),
+    } ),
   ],
 })

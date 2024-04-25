@@ -3,18 +3,28 @@ import { computed, ref } from 'vue'
 import { ipRepository } from '~/api/repository'
 import { IpSuccessResult, handleRes } from '~/api/repository/ip.entity'
 
-type loadingStatuses = 'loading' | 'success' | 'fail'
+export type loadingStatuses = 'loading' | 'success' | 'fail'
 
 type IpTableList = {
 	data?: IpSuccessResult,
 	status: loadingStatuses,
 }
 
-export const usetableListStore = defineStore( 'tableList', () => {
-	const tableList = ref <Map<string,IpTableList>>( new Map() )
+export const usetableListStore = defineStore( 'tableListMap', () => {
+	const tableListMap = ref <Map<string,IpTableList>>( new Map() )
+	const showTable = ref( false )
+	const textareaModel = ref( '' )
+
+	const tableList = computed( () => {
+		const res: Array<{query:string}&IpTableList> = []
+		tableListMap.value.forEach( ( val, key ) => {
+			res.push( { ...val,query:key })
+		} )
+		return res
+	})
 	
 	const setIdData = ( query: string, status: loadingStatuses, data?: IpSuccessResult ) => {
-		const oldval = tableList.value.get(query)
+		const oldval = tableListMap.value.get(query)
 		if ( !oldval ) return
 		
 		oldval.status = status
@@ -24,7 +34,7 @@ export const usetableListStore = defineStore( 'tableList', () => {
 	}
 
 	const fetch = async (query:string) => {
-		tableList.value.set(
+		tableListMap.value.set(
 		query,
 			{
 				status: 'loading',
@@ -41,22 +51,26 @@ export const usetableListStore = defineStore( 'tableList', () => {
 		}
 	}
 	
-	const textareaModel = ref('')
 	const idToFetch = computed( () => {
 		return new Set( textareaModel.value.split( '\n' ).filter((query:string)=>query.length))
 	} )
 	
 	const fetchTextarea = () => {
+		showTable.value = true
 		idToFetch.value.forEach( ( query ) => {
 			fetch(query)
-		})		
+		} )
 	}
+
+
 	return {
-		tableList,
+		tableListMap,
 		fetch,
 		textareaModel,
 		fetchTextarea,
-		idToFetch
+		idToFetch,
+		showTable,
+		tableList
 	}
 }
 )

@@ -1,16 +1,14 @@
 <template>
-<div>
-	<div>
-          <ElInput type="textarea" class="w-620px mt-80px block" placeholder="Введите IP адреса" v-model="tableListStore.textareaModel" rows="5">
-          </ElInput>
-          <ElButton class="mt-20px" @click="tableListStore.fetchTextarea" type="primary">Отправить</ElButton>
-            {{ tableListStore.tableList }}
-        </div>
-</div>
+  <div class="mt-80px">
+    <IpListInput v-if="!tableListStore.showTable"/>
+    <IpListTable v-else></IpListTable>
+  </div>
 </template>
 
 <script lang='ts' setup>
 import { usetableListStore } from '~/store';
+import IpListInput from './IpListInput.vue';
+import IpListTable from './IpListTable.vue';
 
 
 const tableListStore = usetableListStore()
