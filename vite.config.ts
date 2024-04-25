@@ -16,7 +16,6 @@ import {
 
 const pathSrc = path.resolve(__dirname, 'src')
 
-// https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
     alias: {
@@ -33,9 +32,7 @@ export default defineConfig({
   plugins: [
     vue(),
     Components({
-      // allow auto load markdown components under `./src/components/`
       extensions: ['vue', 'md'],
-      // allow auto import and register components used in markdown
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       resolvers: [
         ElementPlusResolver({
@@ -44,9 +41,6 @@ export default defineConfig({
       ],
       dts: 'src/components.d.ts',
     }),
-
-    // https://github.com/antfu/unocss
-    // see unocss.config.ts for config
     Unocss({
       presets: [
         presetUno(),

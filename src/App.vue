@@ -1,8 +1,11 @@
 <template>
   <el-config-provider namespace="ep">
-      <div class="">
+    <div id="main-app">
+      <TheHeader/>
+      <div>
         asd
       </div>
+    </div>
   </el-config-provider>
 </template>
 
