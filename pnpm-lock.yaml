@@ -17,6 +17,9 @@ dependencies:
   vue:
     specifier: ^3.4.21
     version: 3.4.25(typescript@5.4.5)
+  vue-router:
+    specifier: '4'
+    version: 4.3.2(vue@3.4.25)
 
 devDependencies:
   '@iconify-json/ep':
@@ -45,7 +48,7 @@ devDependencies:
     version: 5.2.10(@types/node@20.12.7)(sass@1.75.0)
   vite-ssg:
     specifier: ^0.23.6
-    version: 0.23.7(vite@5.2.10)(vue@3.4.25)
+    version: 0.23.7(vite@5.2.10)(vue-router@4.3.2)(vue@3.4.25)
   vue-tsc:
     specifier: ^2.0.7
     version: 2.0.14(typescript@5.4.5)
@@ -1178,7 +1181,6 @@ packages:
 
   /@vue/devtools-api@6.6.1:
     resolution: {integrity: sha512-LgPscpE3Vs0x96PzSSB4IGVSZXZBZHpfxs+ZA1d+VEPwHdOXowy/Y2CsvCAIFrf+ssVU1pD1jidj505EpUnfbA==}
-    dev: false
 
   /@vue/language-core@2.0.14(typescript@5.4.5):
     resolution: {integrity: sha512-3q8mHSNcGTR7sfp2X6jZdcb4yt8AjBXAfKk0qkZIh7GAJxOnoZ10h5HToZglw4ToFvAnq+xu/Z2FFbglh9Icag==}
@@ -2603,7 +2605,7 @@ packages:
       requires-port: 1.0.0
     dev: true
 
-  /vite-ssg@0.23.7(vite@5.2.10)(vue@3.4.25):
+  /vite-ssg@0.23.7(vite@5.2.10)(vue-router@4.3.2)(vue@3.4.25):
     resolution: {integrity: sha512-ufkQa45DzXPpo/jPiOkuMvxWn0B1hD1Lw4CnG/9CAgM804/dZYQi9PQvr4a1W0nMjySgsGFwV/zR1JZNzrGEvw==}
     engines: {node: '>=14.0.0'}
     hasBin: true
@@ -2628,6 +2630,7 @@ packages:
       prettier: 3.2.5
       vite: 5.2.10(@types/node@20.12.7)(sass@1.75.0)
       vue: 3.4.25(typescript@5.4.5)
+      vue-router: 4.3.2(vue@3.4.25)
       yargs: 17.7.2
     transitivePeerDependencies:
       - bufferutil
@@ -2687,6 +2690,14 @@ packages:
     dependencies:
       vue: 3.4.25(typescript@5.4.5)
     dev: false
+
+  /vue-router@4.3.2(vue@3.4.25):
+    resolution: {integrity: sha512-hKQJ1vDAZ5LVkKEnHhmm1f9pMiWIBNGF5AwU67PdH7TyXCj/a4hTccuUuYCAMgJK6rO/NVYtQIEN3yL8CECa7Q==}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      '@vue/devtools-api': 6.6.1
+      vue: 3.4.25(typescript@5.4.5)
 
   /vue-template-compiler@2.7.16:
     resolution: {integrity: sha512-AYbUWAJHLGGQM7+cNTELw+KsOG9nl2CnSv467WobS5Cv9uk3wFcnr1Etsz2sEIHEZvw1U+o9mRlEO6QbZvUPGQ==}
