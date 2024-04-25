@@ -9,16 +9,16 @@ dependencies:
     specifier: ^1.6.8
     version: 1.6.8
   element-plus:
-    specifier: ^2.6.2
+    specifier: ^2.7.1
     version: 2.7.1(vue@3.4.25)
   pinia:
     specifier: ^2.1.7
     version: 2.1.7(typescript@5.4.5)(vue@3.4.25)
   vue:
-    specifier: ^3.4.21
+    specifier: ^3.4.25
     version: 3.4.25(typescript@5.4.5)
   vue-router:
-    specifier: '4'
+    specifier: ^4.3.2
     version: 4.3.2(vue@3.4.25)
 
 devDependencies:
@@ -26,19 +26,19 @@ devDependencies:
     specifier: ^1.1.15
     version: 1.1.15
   '@types/node':
-    specifier: ^20.11.30
+    specifier: ^20.12.7
     version: 20.12.7
   '@vitejs/plugin-vue':
     specifier: ^5.0.4
     version: 5.0.4(vite@5.2.10)(vue@3.4.25)
   sass:
-    specifier: ^1.72.0
+    specifier: ^1.75.0
     version: 1.75.0
   typescript:
-    specifier: ^5.4.3
+    specifier: ^5.4.5
     version: 5.4.5
   unocss:
-    specifier: ^0.58.6
+    specifier: ^0.58.9
     version: 0.58.9(postcss@8.4.38)(vite@5.2.10)
   unplugin-vue-components:
     specifier: ^0.26.0
@@ -47,16 +47,16 @@ devDependencies:
     specifier: ^0.8.6
     version: 0.8.6(vue-router@4.3.2)(vue@3.4.25)
   vite:
-    specifier: ^5.2.5
+    specifier: ^5.2.10
     version: 5.2.10(@types/node@20.12.7)(sass@1.75.0)
   vite-plugin-svgs-icons:
     specifier: ^1.0.8
     version: 1.0.8(@types/node@20.12.7)(sass@1.75.0)(typescript@5.4.5)
   vite-ssg:
-    specifier: ^0.23.6
+    specifier: ^0.23.7
     version: 0.23.7(vite@5.2.10)(vue-router@4.3.2)(vue@3.4.25)
   vue-tsc:
-    specifier: ^2.0.7
+    specifier: ^2.0.14
     version: 2.0.14(typescript@5.4.5)
 
 packages:

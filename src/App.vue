@@ -8,12 +8,3 @@
     </div>
   </el-config-provider>
 </template>
-<script lang='ts' setup>
-import { watchEffect } from 'vue';
-import { useRoute } from 'vue-router';
-
-const route = useRoute()
-watchEffect( () => {
-  console.log( route.fullPath);
-})
-</script>
