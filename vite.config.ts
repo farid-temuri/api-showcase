@@ -50,16 +50,7 @@ export default defineConfig({
     Unocss({
       presets: [
         presetUno(),
-        presetAttributify(),
-        presetIcons({
-          scale: 1.2,
-          warn: true,
-        }),
       ],
-      transformers: [
-        transformerDirectives(),
-        transformerVariantGroup(),
-      ]
     }),
   ],
 })
